@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoctan.api.mapper.AssetsMapper">
+
+    <resultMap id="AssetsMap" type="com.zoctan.api.model.Assets">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="model" jdbcType="VARCHAR" property="model"/>
+        <result column="serial_number" jdbcType="VARCHAR" property="serialNumber"/>
+        <result column="hall" jdbcType="VARCHAR" property="hall"/>
+        <result column="department" jdbcType="VARCHAR" property="department"/>
+        <result column="cabinet" jdbcType="VARCHAR" property="cabinet"/>
+        <result column="shelf_time" jdbcType="TIMESTAMP" property="shelfTime"/>
+        <result column="network_area" jdbcType="VARCHAR" property="networkArea"/>
+        <result column="cpu" jdbcType="VARCHAR" property="cpu"/>
+        <result column="memory" jdbcType="VARCHAR" property="memory"/>
+        <result column="ip" jdbcType="VARCHAR" property="ip"/>
+        <result column="operating_system" jdbcType="VARCHAR" property="operatingSystem"/>
+        <result column="middle_ware" jdbcType="VARCHAR" property="middleWare"/>
+        <result column="data_base" jdbcType="VARCHAR" property="dataBase"/>
+    </resultMap>
+
+    <select id="findAllUserWithRole" resultMap="UserWithRoleMap">
+        SELECT
+        a.*
+        FROM `assets` a
+    </select>
+
+</mapper>
